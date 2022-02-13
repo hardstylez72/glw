@@ -1,3 +1,5 @@
+## Goal is to generate logger and tracer wraps around a certain struct 
+
 ## How to install
 1) git clone git@github.com:hardstylez72/glw.git
  
