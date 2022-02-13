@@ -1,0 +1,13 @@
+package {{.PkgName}}
+
+import (
+    {{range .Imports}}
+        "{{.}}"
+    {{end}}
+)
+
+type Service interface {
+{{range .Methods}}
+    {{.MethodName}}({{range .MethodParams}}{{.ParamName}} {{.ParamType}}, {{end}}) ({{range .MethodReturns}}{{.ReturnName}} {{.ReturnType}}, {{end}})
+{{end}}
+}

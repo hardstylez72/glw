@@ -1,0 +1,45 @@
+package {{.PkgName}}
+
+import (
+    {{range .Imports}}
+        "{{.}}"
+    {{end}}
+  tracer "lwt/examples/tracer/tracerWrap" {{/* EXAMPLE DEPENDENCY  */}}
+  "context"
+)
+
+type {{.StructName}} struct {
+    s Service
+}
+
+{{range .Methods}}
+
+func ({{.MethodRecv}} *{{.MethodStructName}}) {{.MethodName}}({{range .MethodParams}}{{.ParamName}} {{.ParamType}}, {{end}}) ({{range .MethodReturns}}{{.ReturnName}} {{.ReturnType}}, {{end}}) {
+
+    {{ if .WithTracer }}
+
+        {{ if .HasContext }}
+           {{.ContextInputToken}}, span := tracer.Start({{.ContextInputToken}}, "{{.PkgName}}.{{.MethodName}}")
+        {{ else }}
+             _, span := tracer.Start(context.Background(), "{{.PkgName}}.{{.MethodName}}")
+        {{ end }}
+
+        {{ if .HasError }}
+            defer  func() {
+                span.End({{.ErrorOutputToken}})
+            }()
+        {{ else }}
+            defer  func() { span.End() }()
+        {{ end }}
+
+    {{ end }}
+
+
+    {{ $length := len .MethodReturns }} {{ if eq $length 0 }}
+        {{.MethodRecv}}.s.{{.MethodName}}({{range .MethodParams}}{{.ParamName}} , {{end}})
+    {{ else }}
+          return {{.MethodRecv}}.s.{{.MethodName}}({{range .MethodParams}}{{.ParamName}} , {{end}})
+    {{ end }}
+}
+
+{{end}}

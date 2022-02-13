@@ -1,0 +1,48 @@
+package {{.PkgName}}
+
+import (
+    {{range .Imports}}
+        "{{.}}"
+    {{end}}
+    "log" {{/* EXAMPLE DEPENDENCY  */}}
+)
+
+type {{.StructName}} struct {
+    s Service
+}
+
+{{range .Methods}}
+
+func ({{.MethodRecv}} *{{.MethodStructName}}) {{.MethodName}}({{range .MethodParams}}{{.ParamName}} {{.ParamType}}, {{end}}) ({{range .MethodReturns}}{{.ReturnName}} {{.ReturnType}}, {{end}}) {
+
+    {{ if .WithLogger }}
+
+        log.Println("{{.PkgName}}.{{.MethodName}} start")
+
+        {{ if .HasError }}
+        	defer func() {
+        		if {{.ErrorOutputToken}} != nil {
+        			log.Println("{{.PkgName}}.{{.MethodName}} error " + {{.ErrorOutputToken}}.Error())
+        		} else {
+        			log.Println("{{.PkgName}}.{{.MethodName}} finish")
+        		}
+        	}()
+
+        {{ else }}
+
+            defer func() {
+                    log.Println("{{.PkgName}}.{{.MethodName}} finish")
+            }()
+
+        {{ end }}
+    {{ end }}
+
+
+    {{ $length := len .MethodReturns }} {{ if eq $length 0 }}
+        {{.MethodRecv}}.s.{{.MethodName}}({{range .MethodParams}}{{.ParamName}} , {{end}})
+    {{ else }}
+          return {{.MethodRecv}}.s.{{.MethodName}}({{range .MethodParams}}{{.ParamName}} , {{end}})
+    {{ end }}
+}
+
+{{end}}

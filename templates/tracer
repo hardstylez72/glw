@@ -1,0 +1,30 @@
+package {{.PkgName}}
+
+
+import (
+    {{range .Imports}}
+        "{{.}}"
+    {{end}}
+)
+
+type {{.StructName}} struct {
+    s Service
+}
+
+{{range .Methods}}
+
+func ({{.MethodRecv}} *{{.MethodStructName}}) {{.MethodName}}({{range .MethodParams}}{{.ParamName}} {{.ParamType}}, {{end}}) ({{range .MethodReturns}}{{.ReturnName}} {{.ReturnType}}, {{end}}) {
+
+    {{ if .WithTracer }}
+        {{/* YOUR CODE HERE */}}
+    {{ end }}
+
+
+    {{ $length := len .MethodReturns }} {{ if eq $length 0 }}
+        {{.MethodRecv}}.s.{{.MethodName}}({{range .MethodParams}}{{.ParamName}} , {{end}})
+    {{ else }}
+          return {{.MethodRecv}}.s.{{.MethodName}}({{range .MethodParams}}{{.ParamName}} , {{end}})
+    {{ end }}
+}
+
+{{end}}
