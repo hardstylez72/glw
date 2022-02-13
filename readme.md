@@ -22,6 +22,8 @@
 | tracer               |    true/false     | enables or disables tracer file generation | yes       |
 
 
+# to disable logger or tracer wrapper generation write in comments "glw-no-logger" or "glw-no-tracer"
+
 ## How run examples
 1) git clone git@github.com:hardstylez72/glw.git
 2) cd glw
