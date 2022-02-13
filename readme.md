@@ -12,14 +12,14 @@
 
 ## Options
 
-| flag                 |      example      |                description                 |optional|
-|----------------------|:-----------------:|:------------------------------------------:|----|
-| path                 |         .         |             path to a package              | no |
-| id                   |    yourStruct     |                struct name                 | no |
-| logger_template_file | ./logger_template |        custom logger template file         | no |
-| logger               |    true/false     | enables or disables logger file generation | no |
-| tracer_template_file | ./tracer_template |        custom tracer template file         | no |
-| tracer               |    true/false     | enables or disables tracer file generation | no |
+| flag                 |      example      |                description                 | optional |
+|----------------------|:-----------------:|:------------------------------------------:|----------|
+| path                 |         .         |             path to a package              | no       |
+| id                   |    yourStruct     |                struct name                 | no       |
+| logger_template_file | ./logger_template |        custom logger template file         | yes      |
+| logger               |    true/false     | enables or disables logger file generation | yes       |
+| tracer_template_file | ./tracer_template |        custom tracer template file         | yes       |
+| tracer               |    true/false     | enables or disables tracer file generation | yes       |
 
 
 ## How run examples
