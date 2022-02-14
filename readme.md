@@ -1,5 +1,18 @@
 ## Goal is to generate logger and tracer wraps around a certain struct 
 ![img](ezgif-7-1de0497a9e.gif)
+
+
+## Example
+```go
+func main() {
+    var s pkg.Service // generated
+    s = &pkg.Struct1{} // yours
+    s = &pkg.ServiceLogger{Service: s} // generated
+    s = &pkg.ServiceTracer{Service: s} // generated
+    _ = s.F5(&http.Client{}) // your wrapped struct with logger and tracer
+}
+```
+
 ## How to install
 1) git clone git@github.com:hardstylez72/glw.git
  

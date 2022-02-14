@@ -5,7 +5,7 @@ import (
 	"math/big"
 )
 
-//go:generate glw -path=. -id=Struct1 -logger_template_file=../logger_example -tracer=false
+//go:generate glw -path=. -id=Struct1 -logger_template_file=../logger_example
 type Struct1 struct {
 }
 

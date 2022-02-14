@@ -8,7 +8,7 @@ import (
 )
 
 type {{.StructName}} struct {
-    s Service
+    Service Service
 }
 
 {{range .Methods}}
@@ -21,9 +21,9 @@ func ({{.MethodRecv}} *{{.MethodStructName}}) {{.MethodName}}({{range .MethodPar
 
 
     {{ $length := len .MethodReturns }} {{ if eq $length 0 }}
-        {{.MethodRecv}}.s.{{.MethodName}}({{range .MethodParams}}{{.ParamName}} , {{end}})
+        {{.MethodRecv}}.Service.{{.MethodName}}({{range .MethodParams}}{{.ParamName}} , {{end}})
     {{ else }}
-          return {{.MethodRecv}}.s.{{.MethodName}}({{range .MethodParams}}{{.ParamName}} , {{end}})
+          return {{.MethodRecv}}.Service.{{.MethodName}}({{range .MethodParams}}{{.ParamName}} , {{end}})
     {{ end }}
 }
 

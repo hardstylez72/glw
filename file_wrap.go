@@ -91,7 +91,7 @@ func PrepareWrapFileStruct(methods []Method, pkgName string, deps []string, stru
 
 func generateWrapFile(methods []Method, path, name, pkgName, templateBody string, deps []string, structName string) error {
 
-	t, err := template.New("loggerFileTemplate").Parse(templateBody)
+	t, err := template.New(structName).Parse(templateBody)
 	if err != nil {
 		return err
 	}

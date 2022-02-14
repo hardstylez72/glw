@@ -61,7 +61,7 @@
       <recent name="$PROJECT_DIR$/examples" />
     </key>
   </component>
-  <component name="RunManager" selected="Go Test.TestGenerate/#00 in lwt">
+  <component name="RunManager" selected="Go Build.go build github.com/hardstylez72/glw">
     <configuration default="true" type="GoApplicationRunConfiguration" factoryName="Go Application">
       <module name="glw" />
       <working_directory value="$PROJECT_DIR$" />
@@ -69,6 +69,26 @@
       <package value="lwt" />
       <directory value="$PROJECT_DIR$" />
       <filePath value="$PROJECT_DIR$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="go build github.com/hardstylez72/glw" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+      <module name="glw" />
+      <working_directory value="$PROJECT_DIR$" />
+      <parameters value="-path=examples/logger/pkg -id=Struct1 -logger_template_file=examples/logger/logger_example " />
+      <EXTENSION ID="net.ashald.envfile">
+        <option name="IS_ENABLED" value="false" />
+        <option name="IS_SUBST" value="false" />
+        <option name="IS_PATH_MACRO_SUPPORTED" value="false" />
+        <option name="IS_IGNORE_MISSING_FILES" value="false" />
+        <option name="IS_ENABLE_EXPERIMENTAL_INTEGRATIONS" value="false" />
+        <ENTRIES>
+          <ENTRY IS_ENABLED="true" PARSER="runconfig" />
+        </ENTRIES>
+      </EXTENSION>
+      <kind value="PACKAGE" />
+      <package value="github.com/hardstylez72/glw" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$/main.go" />
       <method v="2" />
     </configuration>
     <configuration name="go build lwt" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
@@ -89,6 +109,17 @@
       <package value="lwt" />
       <directory value="$PROJECT_DIR$" />
       <filePath value="$PROJECT_DIR$/main.go" />
+      <method v="2" />
+    </configuration>
+    <configuration name="TestGenerate/#00 in github.com/hardstylez72/glw" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="glw" />
+      <working_directory value="$PROJECT_DIR$" />
+      <kind value="PACKAGE" />
+      <package value="github.com/hardstylez72/glw" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$" />
+      <framework value="gotest" />
+      <pattern value="^\QTestGenerate\E$/^\Q#00\E$" />
       <method v="2" />
     </configuration>
     <configuration name="TestGenerate/#00 in lwt" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
@@ -113,28 +144,6 @@
       <pattern value="^\QTestGenerate\E$/^\Q#01\E$" />
       <method v="2" />
     </configuration>
-    <configuration name="TestName in lwt" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
-      <module name="glw" />
-      <working_directory value="$PROJECT_DIR$" />
-      <kind value="PACKAGE" />
-      <package value="lwt" />
-      <directory value="$PROJECT_DIR$" />
-      <filePath value="$PROJECT_DIR$" />
-      <framework value="gotest" />
-      <pattern value="^\QTestName\E$" />
-      <method v="2" />
-    </configuration>
-    <configuration name="Test_findStructMethods in lwt" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
-      <module name="glw" />
-      <working_directory value="$PROJECT_DIR$" />
-      <kind value="PACKAGE" />
-      <package value="lwt" />
-      <directory value="$PROJECT_DIR$" />
-      <filePath value="$PROJECT_DIR$" />
-      <framework value="gotest" />
-      <pattern value="^\QTest_findStructMethods\E$" />
-      <method v="2" />
-    </configuration>
     <configuration default="true" type="GoTestRunConfiguration" factoryName="Go Test">
       <module name="glw" />
       <working_directory value="$PROJECT_DIR$" />
@@ -147,18 +156,18 @@
     </configuration>
     <list>
       <item itemvalue="Go Build.go build lwt" />
-      <item itemvalue="Go Test.Test_findStructMethods in lwt" />
+      <item itemvalue="Go Build.go build github.com/hardstylez72/glw" />
       <item itemvalue="Go Test.TestGenerate/#00 in lwt" />
       <item itemvalue="Go Test.TestGenerate/#01 in lwt" />
-      <item itemvalue="Go Test.TestName in lwt" />
+      <item itemvalue="Go Test.TestGenerate/#00 in github.com/hardstylez72/glw" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Go Build.go build github.com/hardstylez72/glw" />
+        <item itemvalue="Go Test.TestGenerate/#00 in github.com/hardstylez72/glw" />
         <item itemvalue="Go Test.TestGenerate/#00 in lwt" />
         <item itemvalue="Go Build.go build lwt" />
         <item itemvalue="Go Test.TestGenerate/#01 in lwt" />
-        <item itemvalue="Go Test.TestName in lwt" />
-        <item itemvalue="Go Test.Test_findStructMethods in lwt" />
       </list>
     </recent_temporary>
   </component>
@@ -173,14 +182,19 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="DlvLineBreakpoint">
-          <url>file://$PROJECT_DIR$/../glw/lib.go</url>
+          <url>file://$PROJECT_DIR$/lib.go</url>
           <line>35</line>
           <option name="timeStamp" value="10" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DlvLineBreakpoint">
-          <url>file://$PROJECT_DIR$/../glw/generate.go</url>
-          <line>36</line>
-          <option name="timeStamp" value="14" />
+          <url>file://$PROJECT_DIR$/generate.go</url>
+          <line>43</line>
+          <option name="timeStamp" value="18" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/file_wrap.go</url>
+          <line>93</line>
+          <option name="timeStamp" value="20" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

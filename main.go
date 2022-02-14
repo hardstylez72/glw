@@ -63,8 +63,8 @@ func main() {
 	var tracerTemplateFile string
 	if *tracer {
 		if *tracerTemplateFilePath == tracerTemplateFileIdNotSet {
-			loggerTemplateFile = defaultTracerTemplate
-			log.Println("you should specify your customized logger file template, using default one")
+			tracerTemplateFile = defaultTracerTemplate
+			log.Println("you should specify your customized tracer file template, using default one")
 		} else {
 			tracerTemplateFile, err = readFile(*tracerTemplateFilePath)
 			if err != nil {
