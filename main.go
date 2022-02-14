@@ -14,6 +14,7 @@ const (
 	idIsNotSet                 = "struct id is not set"
 	loggerTemplateFileIdNotSet = "logger template file is not set"
 	tracerTemplateFileIdNotSet = "tracer template file is not set"
+	version                    = "0.0.1"
 )
 
 //go:embed templates/logger
@@ -26,6 +27,7 @@ var defaultInterfaceTemplate string
 var defaultTracerTemplate string
 
 func main() {
+	log.Println("glw version: " + version)
 	var err error
 	path := flag.String("path", pathIsNotSet, "/path/to/package")
 	id := flag.String("id", idIsNotSet, "a string")

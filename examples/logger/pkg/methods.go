@@ -14,7 +14,7 @@ func (s *Struct1) F1(g, f string, greg int) error {
 }
 
 // glw-no-logger
-func (s *Struct1) F2(h bool) error {
+func (s *Struct1) F2(h bool, m map[string]int, j chan int) error {
 
 	return nil
 }

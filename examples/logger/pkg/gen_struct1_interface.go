@@ -1,11 +1,11 @@
 package pkg
 
 import (
+	"net/http"
+
 	"context"
 
 	"math/big"
-
-	"net/http"
 )
 
 type Service interface {
@@ -13,7 +13,7 @@ type Service interface {
 
 	F1(g, f string, greg int) error
 
-	F2(h bool) error
+	F2(h bool, m map[string]int, j chan int) error
 
 	f3(ctx context.Context) context.Context
 

@@ -1,11 +1,11 @@
 package pkg
 
 import (
+	"net/http"
+
 	"context"
 
 	"math/big"
-
-	"net/http"
 )
 
 type ServiceTracer struct {
@@ -24,9 +24,9 @@ func (s *ServiceTracer) F1(g, f string, greg int) (err error) {
 
 }
 
-func (s *ServiceTracer) F2(h bool) (err error) {
+func (s *ServiceTracer) F2(h bool, m map[string]int, j chan int) (err error) {
 
-	return s.Service.F2(h)
+	return s.Service.F2(h, m, j)
 
 }
 
